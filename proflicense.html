@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        nav {
+            background-color: var(--clr-Green);
+        }
+
+        .container {
+            margin-top: 10%;
+        }
+
+        .sidebar-nav {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            gap: 1rem;
+        }
+        
+        .sidebar-nav a {
+            color: #198754;
+            text-decoration: none;
+        }
+        
+        .profile-card {
+            background-color: #E0EBF3;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .card {
+            border: 2px solid var(--clr-Green);
+        }
+        
+        /* Profile cards container card needs specific height */
+        .profile-cards-card {
+            height: 300px;
+        }
+
+        .col-md-4 {
+            height: 20%;
+        }
+        
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Updated styles for status badges - no rounded corners */
+        .pending-badge {
+            background-color: #fff;
+            border: 1px solid #dc3545;
+            color: #A90505;
+            font-family: var(--ff-Metropolis);
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 0;
+        }
+        
+        .approved-badge {
+            background-color: #fff;
+            border: 1px solid #198754;
+            color: var(--Green, #116A3A);
+            font-family: var(--ff-Metropolis);
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 0;
+        }
+        
+        /* Input with bottom border only for certifications */
+        .certification-input {
+            width: 100%;
+            border: none;
+            color: var(--clr-Green);
+            font-family: Metropolis;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-bottom: 1px solid #198754;
+            background-color: transparent;
+            padding: 5px 0;
+            margin-bottom: 10px;
+        }
+        
+        .certification-input:focus {
+            outline: none;
+            border-bottom: 2px solid #198754;
+        }
+
+        .nav-item a{
+            color: var(--clr-Green);
+            font-family: var(--ff-Metropolis);
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .nav-item a:hover{
+            text-decoration: underline;
+        }
+        
+        /* New styles for scrollable profile cards */
+        .profiles-container {
+            max-height: 240px; /* Height to show approximately 1 profile card */
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        /* Styling the scrollbar */
+        .profiles-container::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .profiles-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .profiles-container::-webkit-scrollbar-thumb {
+            background: #198754;
+            border-radius: 10px;
+        }
+        
+        .profiles-container::-webkit-scrollbar-thumb:hover {
+            background: #146c43;
+        }
+    </style>
+</head>
+<header>
+    <nav>
+        <div class="navbar-left">
+            <img src="images/UMakLogo.png" alt="UMak Logo">
+            <a href="#">UNIVERSITY OF MAKATI</a>
+        </div>
+        <ul class="navbar-right">
+            <li><a href="">Home</a></li>
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container mt-8">
+        <div class="row">
+            <!-- Left Column - Professional Licenses -->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-success">Professional Licenses</h4>
+                        <hr class="text-success">
+                        
+                        <div class="mb-4">
+                            <h5>Examinations</h5>
+                            <div class="mb-3">
+                                <label class="text-success">Name of Exam/Certifications:</label>
+                                <input type="text" class="certification-input" value="TESDA - CERTIFIED COMPUTER PROGRAMMER NATIONAL CERTIFICATE II" readonly>
+                                <div class="d-flex align-items-center mt-1">
+                                    <label class="text-success me-2">Status:</label>
+                                    <span class="badge pending-badge px-3 py-2">Pending Approval</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="text-success">Name of Exam/Certifications:</label>
+                                <input type="text" class="certification-input" value="TESDA - CERTIFIED COMPUTER HARDWARE SERVICING - NATIONAL CERTIFICATE II" readonly>
+                                <div class="d-flex align-items-center mt-1">
+                                    <label class="text-success me-2">Status:</label>
+                                    <span class="badge approved-badge px-3 py-2">Approved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Navigation and Profiles -->
+            <div class="col-md-4">
+                <!-- Navigation Menu -->
+                <div class="card mb-4">
+                    <div class="card-body sidebar-nav">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="#">Professional Information</a></li>
+                            <li class="nav-item"><a href="#" class="fw-bold">Professional Licenses</a></li>
+                            <li class="nav-item"><a href="#">Research and Publications</a></li>
+                            <li class="nav-item"><a href="#">Account Security</a></li>
+                            <li class="nav-item"><a href="#">Create New Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Profile Cards -->
+                <div class="card profile-cards-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-success mb-3">Profiles</h5>
+                        <!-- Added a container for scrollable profiles -->
+                        <div class="profiles-container">
+                            <div class="profile-card d-flex align-items-center mb-3">
+                                <div class="profile-image me-3">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-success">Anna Charisma De Chavez</div>
+                                    <div class="small">Associate Professor</div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-card d-flex align-items-center mb-3">
+                                <div class="profile-image me-3">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-success">Edgardo Cruz</div>
+                                    <div class="small">Pending Position</div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-card d-flex align-items-center mb-3">
+                                <div class="profile-image me-3">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-success">Anna Charisma De Chavez</div>
+                                    <div class="small">Associate Professor</div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-card d-flex align-items-center">
+                                <div class="profile-image me-3">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-success">Edgardo Cruz</div>
+                                    <div class="small">Pending Position</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
