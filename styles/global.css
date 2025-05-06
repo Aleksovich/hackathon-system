@@ -123,3 +123,12 @@ nav .navbar-right a {
     font-size: 1.1rem;
     display: inline-block;
 }
+
+#active-sidebar{
+    color: var(--clr-Green);
+    font-family: var(--ff-Metropolis);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
