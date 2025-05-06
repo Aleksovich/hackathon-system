@@ -43,69 +43,74 @@
                     <h1 class="welcome-text">Welcome to Account Settings</h1>
                 </div>
 
-                <div class="profile-image-container">
-                    <div class="profile-picture">
-                        <img src="/api/placeholder/400/400" alt="Profile picture" class="profile-image">
-                        <div class="edit-icon">
-                            <i class="fas fa-pencil-alt"></i>
+                <div class="profile-personal-container">
+                    <div class="profile-image-container">
+                        <div class="profile-picture">
+                            <img src="images/profile-placeholder.png" alt="Profile picture" class="profile-image">
+                            <div class="edit-icon">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
                         </div>
+                        <h2 class="profile-name">Prof. Roel Traballo</h2>
+                        <p class="profile-title">MIT, PhD</p>
                     </div>
-                    <h2 class="profile-name">Prof. Roel Traballo</h2>
-                    <p class="profile-title">MIT, PhD</p>
-                </div>
+    
+                    <!-- Form fields -->
+                    <form id="personalInfoForm">
+                    <h2 class="section-title">Personal Information</h2>
+        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" class="form-control">
+                            </div>
 
-            <!-- Form fields -->
-            <form id="personalInfoForm">
-            <h2 class="section-title">Personal Information</h2>
+                            <div class="form-group">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="birthdate">Birthdate:</label>
+                                <input type="text" id="birthdate" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="age">Age:</label>
+                                <input type="text" id="age" class="form-control">
+                            </div>
+                        </div>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" class="form-control" value="Roel Richard">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" class="form-control" value="Traballo">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="birthdate">Birthdate:</label>
-                        <input type="text" id="birthdate" class="form-control" value="07/30/2005">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="age">Age:</label>
-                        <input type="text" id="age" class="form-control" value="33">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="civilStatus">Civil Status:</label>
-                        <input type="text" id="civilStatus" class="form-control" value="Married">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="gender">Gender:</label>
-                        <input type="text" id="gender" class="form-control" value="Alien">
-                    </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="civilStatus">Civil Status:</label>
+                                <input type="text" id="civilStatus" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <input type="text" id="gender" class="form-control">
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" class="form-control">
+                        </div>
+                        
+                        <div class="btn-container">
+                            <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
+                            <button type="button" id="clearBtn" class="btn btn-secondary">Clear</button>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" class="form-control" value="diyan lang sa gedli">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" class="form-control" value="rtraballo.k12151234@umak.edu.ph">
-                </div>
-                
-                <div class="btn-container">
-                    <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
-                    <button type="button" id="clearBtn" class="btn btn-secondary">Clear</button>
-                </div>
-            </form>
-
             </div>
         
             <!-- Sidebar with navigation menu -->
@@ -113,6 +118,11 @@
                 <ul class="sidebar-menu">
                     <li><a href="#">Personal Information</a></li>
                     <li><a href="#">Academic Information</a></li>
+                    <li><a href="#">Work Experience</a></li>
+                    <li><a href="#">Award, Fellowship and Recognitions</a></li>
+                    <li><a href="#">Professional Licenses</a></li>
+                    <li><a href="#">Research and Publication</a></li>
+                    <li><a href="#">Professional Memberships</a></li>
                     <li><a href="#">Account Security</a></li>
                 </ul>
             </div>
