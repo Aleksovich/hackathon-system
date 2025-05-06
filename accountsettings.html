@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMak CCIS Faculty Management Hub</title>
+
+    <!-- Site icon -->
+    <link rel="icon" type="image/x-icon" href="images/CCISLogo.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/accountsettings.css">
+
+    <!-- JavaScript -->
+    <script defer src="scripts/global.js"></script>
+    <script defer src="scripts/accountsettings.js"></script>
+</head>
+
+<header>
+    <nav>
+        <div class="navbar-left">
+            <img src="images/UMakLogo.png" alt="UMak Logo">
+            <a href="#">UNIVERSITY OF MAKATI</a>
+        </div>
+        <ul class="navbar-right">
+            <li><a href="">Home</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+
+    <!-- Section 1 -->
+    <section class="section1" id="section1">
+        <div class="section1-container">
+            <!-- Profile section with image -->
+            <div class="profile-section">
+
+                <div class="welcome-container">
+                    <h1 class="welcome-text">Welcome to Account Settings</h1>
+                </div>
+
+                <div class="profile-image-container">
+                    <div class="profile-picture">
+                        <img src="/api/placeholder/400/400" alt="Profile picture" class="profile-image">
+                        <div class="edit-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                    </div>
+                    <h2 class="profile-name">Prof. Roel Traballo</h2>
+                    <p class="profile-title">MIT, PhD</p>
+                </div>
+
+            <!-- Form fields -->
+            <form id="personalInfoForm">
+            <h2 class="section-title">Personal Information</h2>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" class="form-control" value="Roel Richard">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" class="form-control" value="Traballo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="birthdate">Birthdate:</label>
+                        <input type="text" id="birthdate" class="form-control" value="07/30/2005">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="text" id="age" class="form-control" value="33">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="civilStatus">Civil Status:</label>
+                        <input type="text" id="civilStatus" class="form-control" value="Married">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <input type="text" id="gender" class="form-control" value="Alien">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" class="form-control" value="diyan lang sa gedli">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" value="rtraballo.k12151234@umak.edu.ph">
+                </div>
+                
+                <div class="btn-container">
+                    <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
+                    <button type="button" id="clearBtn" class="btn btn-secondary">Clear</button>
+                </div>
+            </form>
+
+            </div>
+        
+            <!-- Sidebar with navigation menu -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#">Personal Information</a></li>
+                    <li><a href="#">Academic Information</a></li>
+                    <li><a href="#">Account Security</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    
+</body>
+</html>
