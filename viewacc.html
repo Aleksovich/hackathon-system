@@ -226,7 +226,8 @@
     }
 
  .registered-usertable {
-    max-height: 320px; /* or whatever height you prefer */
+    padding: 4%;
+    max-height: 330px; /* or whatever height you prefer */
     overflow-y: auto;
 }
 
@@ -237,7 +238,7 @@
 
       padding: 5%;
 
-      border-radius: 0.625rem;
+      border-radius: 5px;
       border: 2px solid var(--clr-Green);
     }
     
@@ -266,6 +267,7 @@
       align-items: center;
       margin: 2%;
       padding: 2%;
+      margin-bottom: 5%;
 
       background-color: #E0EBF3;
       border-radius: 5px;
@@ -322,7 +324,191 @@
       min-height: 100vh;
       position: relative;
     }
-    
+
+    .section2, .section3 {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-inline: 5%;
+      padding-top: 7%;
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .section2-container, .section3-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 2px solid var(--clr-Green);
+      border-radius: 5px;
+      margin-left: 3.8%;
+      padding: 3%;
+      width: 60.8%;
+    }
+        
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--clr-Green);
+    }
+        
+    .section-title {
+      color: var(--clr-Green);
+      font-family: var(--ff-Proxima);
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+        
+    .completeness {
+      color: var(--clr-Green);
+      font-family: var(--ff-Proxima);
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+        
+    .completeness-value {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+        
+    .education-level, .school-title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      color: var(--clr-Green);
+      font-family: var(--ff-Metropolis);
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+        
+    .degree-label, .status-label, .university-label, .position-label {
+      color: var(--clr-Green);
+      font-family: var(--ff-Metropolis);
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-bottom: 5px;
+    }
+        
+    .degree-input, .university-input {
+      border: none;
+      border-bottom: 2px solid var(--clr-Green);
+      width: 100%;
+      padding: 8px;
+      color: var(--clr-Green);
+      font-family: var(--ff-Metropolis);
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+        
+    .status-label {
+      margin-top: 15px;
+    }
+        
+    .status-button {
+      display: inline-block;
+      color: #A90505;
+      font-family: var(--ff-Metropolis);
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      background-color: transparent;
+      border: 1px solid var(--clr-Green);
+      padding: 6px 12px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      width: 25%;
+    }
+        
+    /* Work Experience Section Styles */
+    .experience-row {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .label-column {
+      width: 30%;
+      color: var(--clr-Green);
+      font-weight: normal;
+      font-family: var(--ff-Metropolis);
+      font-size: 1.125rem;
+    }
+
+    .data-column {
+      width: 70%;
+      display: flex;
+    }
+
+    .data-field {
+      border-bottom: 1px solid var(--clr-Green);
+      padding-bottom: 3px;
+      font-weight: normal;
+      color: var(--clr-Green);
+      font-family: var(--ff-Metropolis);
+      font-size: 1.125rem;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .date-field {
+      width: 50%;
+    }
+
+    .status-container {
+      margin-top: 10px;
+      margin-bottom: 30px;
+      display: flex;
+    }
+
+    .pending-approval {
+      display: inline-block;
+      border: 1px solid var(--clr-Green);
+      color: #a82828;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: var(--ff-Metropolis);
+    }
+
+    .section4, .section5, .section6 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-inline: 5%;
+    padding-top: 7%;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* Style for approved status */
+  .status-button[style*="background-color: #e6f4ea"] {
+    background-color: #e6f4ea !important;
+    color: #137333 !important;
+    border-color: #137333 !important;
+  }
+  
+  /* Consistent margin between sections */
+  .section4, .section5, .section6 {
+    margin-bottom: 20px;
+  }
+        
     @media (max-width: 768px) {
       .content-wrapper {
         grid-template-columns: 1fr;
@@ -373,6 +559,7 @@
         
         <div class="registered-users">
           <div class="registered-usertable">
+            
               <div class="user-card">
                   <div class="user-avatar">
                     <img src="/api/placeholder/50/50" alt="User Avatar">
@@ -382,6 +569,9 @@
                     <p>Associate Professor</p>
                   </div>
               </div>
+
+
+
           </div>
         </div>
       </div>
@@ -481,164 +671,291 @@
         <div style="width: 100%;"></div>
       </div>
     </div>
+
+    <div class="section2">
+      <div class="section2-container">
+        <div class="section-header">
+          <div class="section-title">Academic Information</div>
+          <div class="completeness">Completeness: <span class="completeness-value">100%</span></div>
+      </div>
+      
+      <div class="education-level">Tertiary Level</div>
+      
+      <div class="degree-label">Degree Earned:</div>
+      <input type="text" class="degree-input" value="MASTER OF SCIENCE IN INFORMATION TECHNOLOGY (MSIT)" readonly>
+      
+      <div class="status-label">Status:</div>
+      <button class="status-button">Pending Approval</button>
+      
+      <div class="degree-label">Degree Earned:</div>
+      <input type="text" class="degree-input" value="MASTER OF SCIENCE IN INFORMATION TECHNOLOGY (MSIT)" readonly>
+      
+      <div class="status-label">Status:</div>
+      <button class="status-button">Pending Approval</button>
+      
+      <div class="education-level">Secondary Level</div>
+      
+      <div class="university-label">Name of University or University:</div>
+      <input type="text" class="university-input" value="POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - STA. MESA" readonly>
+      </div>
+    </div>
+
+    <!-- Work Experience Section -->
+    <div class="section3">
+      <div class="section3-container">
+        <div class="section-header">
+          <div class="section-title">Work Experience</div>
+          <div class="completeness">Completeness: <span class="completeness-value">100%</span></div>
+        </div>
+
+        <div class="school-title">School Experience</div>
+        
+        <div class="experience-row">
+          <div class="label-column">Position:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Associate Professor II</div>
+          </div>
+        </div>
+
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field">Date Started:</div>
+            <div class="date-field">Date Finished:</div>
+          </div>
+        </div>
+
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field data-field">06/2/2008</div>
+            <div class="date-field data-field">06/2/2008</div>
+          </div>
+        </div>
+
+        <div class="experience-row">
+          <div class="label-column">Name of University:</div>
+          <div class="data-column">
+            <div class="data-field full-width">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - STA. MESA</div>
+          </div>
+        </div>
+
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button">Pending Approval</div>
+        </div>
+
+        <!-- Second entry -->
+        <div class="experience-row">
+          <div class="label-column">Position:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Associate Professor II</div>
+          </div>
+        </div>
+
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field">Date Started:</div>
+            <div class="date-field">Date Finished:</div>
+          </div>
+        </div>
+
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field data-field">06/2/2008</div>
+            <div class="date-field data-field">06/2/2008</div>
+          </div>
+        </div>
+
+        <div class="experience-row">
+          <div class="label-column">Name of University:</div>
+          <div class="data-column">
+            <div class="data-field full-width">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - STA. MESA</div>
+          </div>
+        </div>
+
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button">Pending Approval</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section4">
+      <div class="section3-container">
+        <div class="section-header">
+          <div class="section-title">Awards, Fellowships and Scholarships</div>
+          <div class="completeness">Completeness: <span class="completeness-value">100%</span></div>
+        </div>
+        
+        <!-- Awards Section -->
+        <div class="school-title">Awards</div>
+        
+        <div class="experience-row">
+          <div class="label-column">Award:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Most Outstanding Computing Technology Educator for A.Y. 2022-2023</div>
+          </div>
+        </div>
+    
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button" style="background-color: transparent; color: #137333; border-color: #137333;">Approved</div>
+        </div>
+        
+        <div class="experience-row">
+          <div class="label-column">Award:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Most Outstanding Computing Technology Educator for A.Y. 2022-2023</div>
+          </div>
+        </div>
+    
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button">Pending Approval</div>
+        </div>
+    
+        <!-- Fellowships and Scholarships Section -->
+        <div class="school-title">Fellowships and Scholarships</div>
+        
+        <div class="experience-row">
+          <div class="label-column">Title:</div>
+          <div class="data-column">
+            <div class="data-field full-width">UMak Fellow</div>
+          </div>
+        </div>
+    
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button" style="background-color: transparent; color: #137333; border-color: #137333;">Approved</div>
+        </div>
+        
+        <div class="experience-row">
+          <div class="label-column">Title:</div>
+          <div class="data-column">
+            <div class="data-field full-width">UMak Fellow</div>
+          </div>
+        </div>
+    
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button" style="background-color: transparent; color: #137333; border-color: #137333;">Approved</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Section 5: Professional Memberships -->
+    <div class="section5">
+      <div class="section3-container">
+        <div class="section-header">
+          <div class="section-title">Professional Memberships</div>
+          <div class="completeness">Completeness: <span class="completeness-value">100%</span></div>
+        </div>
+        
+        <!-- First Membership -->
+        <div class="experience-row">
+          <div class="label-column">Position:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Active Member</div>
+          </div>
+        </div>
+    
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field">Date Joined:</div>
+            <div class="date-field">Until:</div>
+          </div>
+        </div>
+    
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field data-field">06/2/2008</div>
+            <div class="date-field data-field">06/2/2009</div>
+          </div>
+        </div>
+    
+        <div class="experience-row">
+          <div class="label-column">Name of Association/Organization:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Philippine Society of Information Technology Educators (PSITE)</div>
+          </div>
+        </div>
+    
+        <!-- Second Membership -->
+        <div class="experience-row" style="margin-top: 30px;">
+          <div class="label-column">Position:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Active Member</div>
+          </div>
+        </div>
+    
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field">Date Joined:</div>
+            <div class="date-field">Until:</div>
+          </div>
+        </div>
+    
+        <div class="experience-row">
+          <div class="label-column"></div>
+          <div class="data-column">
+            <div class="date-field data-field">06/2/2008</div>
+            <div class="date-field data-field">06/2/2009</div>
+          </div>
+        </div>
+    
+        <div class="experience-row">
+          <div class="label-column">Name of Association/Organization:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Philippine Society of Information Technology Educators (PSITE)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Section 6: Seminars and Trainings -->
+    <div class="section6">
+      <div class="section3-container">
+        <div class="section-header">
+          <div class="section-title">Seminars and Trainings</div>
+          <div class="completeness">Completeness: <span class="completeness-value">100%</span></div>
+        </div>
+    
+        <div class="school-title">Seminars</div>
+        
+        <!-- First Training -->
+        <div class="experience-row">
+          <div class="label-column">Title:</div>
+          <div class="data-column">
+            <div class="data-field full-width">Database Online Training</div>
+          </div>
+        </div>
+    
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button">Pending Approval</div>
+        </div>
+        
+        <!-- Second Training -->
+        <div class="experience-row">
+          <div class="label-column">Title:</div>
+          <div class="data-column">
+            <div class="data-field full-width">MS ITS - Network Security Online Training</div>
+          </div>
+        </div>
+    
+        <div class="status-container">
+          <div class="label-column">Status:</div>
+          <div class="status-button" style="background-color: transparent; color: #137333; border-color: #137333;">Approved</div>
+        </div>
+      </div>
+    </div>
   </main>
-
-  <section class="section2" id="section2">
-    <!-- Content for section 2 -->
-    <div class="container" style="padding-top: 40px;">
-      <div class="content-wrapper">
-        <div style="grid-column: 1;">
-          <h2 style="color: var(--clr-Green);">Professional Information</h2>
-          <div style="background-color: #f0f0f0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
-            <div class="form-row">
-              <div class="form-group firstlayer">
-                <label for="education">Educational Background:</label>
-                <input type="text" class="form-control" id="education" value="Master's in Computer Science">
-              </div>
-              
-              <div class="form-group firstlayer">
-                <label for="specialization">Specialization:</label>
-                <input type="text" class="form-control" id="specialization" value="Web Development">
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="experience">Years of Experience:</label>
-                <input type="number" class="form-control" id="experience" value="8">
-              </div>
-              
-              <div class="form-group">
-                <label for="work-history">Work History:</label>
-                <input type="text" class="form-control" id="work-history" value="10 years at University of Makati">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Empty div to maintain grid layout -->
-        <div style="width: 100%;"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section3" id="section3">
-    <!-- Content for section 3 -->
-    <div class="container" style="padding-top: 40px;">
-      <div class="content-wrapper">
-        <div style="grid-column: 1;">
-          <h2 style="color: var(--clr-Green);">Professional Licenses</h2>
-          <div style="background-color: #e0e0e0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
-            <div class="form-row">
-              <div class="form-group firstlayer">
-                <label for="license-type">License Type:</label>
-                <input type="text" class="form-control" id="license-type" value="Professional Teacher's License">
-              </div>
-              
-              <div class="form-group firstlayer">
-                <label for="license-number">License Number:</label>
-                <input type="text" class="form-control" id="license-number" value="PTL-123456789">
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="date-issued">Date Issued:</label>
-                <input type="text" class="form-control" id="date-issued" value="January 15, 2015">
-              </div>
-              
-              <div class="form-group">
-                <label for="expiry-date">Expiry Date:</label>
-                <input type="text" class="form-control" id="expiry-date" value="January 15, 2025">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Empty div to maintain grid layout -->
-        <div style="width: 100%;"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section4" id="section4">
-    <!-- Content for section 4 -->
-    <div class="container" style="padding-top: 40px;">
-      <div class="content-wrapper">
-        <div style="grid-column: 1;">
-          <h2 style="color: var(--clr-Green);">Research and Publications</h2>
-          <div style="background-color: #d0d0d0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
-            <div class="form-row">
-              <div class="form-group firstlayer">
-                <label for="research-title">Research Title:</label>
-                <input type="text" class="form-control" id="research-title" value="Impact of AI in Education">
-              </div>
-              
-              <div class="form-group firstlayer">
-                <label for="pub-date">Publication Date:</label>
-                <input type="text" class="form-control" id="pub-date" value="March 2023">
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="journal">Journal:</label>
-                <input type="text" class="form-control" id="journal" value="Journal of Educational Technology">
-              </div>
-              
-              <div class="form-group">
-                <label for="co-authors">Co-Authors:</label>
-                <input type="text" class="form-control" id="co-authors" value="Dr. Anna De Chavez, Dr. John Smith">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Empty div to maintain grid layout -->
-        <div style="width: 100%;"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section5" id="section5">
-    <!-- Content for section 5 -->
-    <div class="container" style="padding-top: 40px; padding-bottom: 100px;">
-      <div class="content-wrapper">
-        <div style="grid-column: 1;">
-          <h2 style="color: var(--clr-Green);">Account Security</h2>
-          <div style="background-color: #c0c0c0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
-            <div class="form-row">
-              <div class="form-group firstlayer">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" value="rtraballo">
-              </div>
-              
-              <div class="form-group firstlayer">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" value="********">
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label for="security-question">Security Question:</label>
-                <input type="text" class="form-control" id="security-question" value="What was your first pet's name?">
-              </div>
-              
-              <div class="form-group">
-                <label for="recovery-email">Recovery Email:</label>
-                <input type="email" class="form-control" id="recovery-email" value="roel.traballo@gmail.com">
-              </div>
-            </div>
-            
-            <div class="btn-container" style="margin-top: 20px;">
-              <button class="btn btn-outline">Change Password</button>
-              <button class="btn btn-outline">Update Security Info</button>
-            </div>
-          </div>
-        </div>
-        <!-- Empty div to maintain grid layout -->
-        <div style="width: 100%;"></div>
-      </div>
-    </div>
-  </section>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
