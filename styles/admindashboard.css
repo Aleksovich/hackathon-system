@@ -1,0 +1,173 @@
+nav{
+    background-color: var(--clr-Green);
+}
+
+.section1{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.section1-container{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 7%;
+    padding-bottom: 2%;
+
+    height: 100%;
+    width: 100%;
+}
+
+.top-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+
+    height: 40%;
+    width: 100%;
+}
+
+.greetings{
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+
+    margin-top: 2%;
+
+    color: var(--clr-Green);
+    font-family: var(--ff-Proxima);
+    font-size: 2.75rem;
+    font-weight: 600;
+
+    width: 28%;
+}
+
+.icon-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pending, .registered{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 75%;
+    width: 25%;
+
+    border-radius: 0.625rem;
+    border: 1px solid var(--clr-Green);
+}
+
+.pa, .ar{
+    color: var(--clr-Green);
+    font-family: var(--ff-Proxima);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.pa-count, .ar-count{
+    color: var(--clr-Green);
+    font-family: var(--ff-Proxima);
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+/* Bottom Containter */
+.bottom-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+
+    height: 80%;
+    width: 100%;
+}
+
+.approvals{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    width: 90%;
+    height: 100%;
+
+    border-radius: 0.625rem;
+    border: 1px solid var(--clr-Green);
+
+    padding: 2%;
+}
+
+.approval-title{
+    display: flex;
+    width: 100%;
+
+    color: var(--clr-Green);
+    font-family: var(--ff-Proxima);
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--clr-Green);
+
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+}
+
+.pending-approvals {
+    flex: 0 0 calc(50% - 0.5rem); /* Each takes up 50% width minus gap */
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+}
+
+.approval-table {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-height: 300px; /* Adjust this to control overflow area */
+    overflow-y: auto;
+}
+
+.name, .title{
+    color: var(--clr-Green);
+    font-family: var(--ff-Proxima);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.title{
+    color: #116A3A;
+    font-weight: 400;
+}
+
+.uploaded, .status{
+    color: #A90505;
+    text-align: right;
+    font-family: "Proxima Nova";
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.status{
+    color: #C78080;
+    font-weight: 400;
+}
