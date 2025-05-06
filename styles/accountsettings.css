@@ -114,12 +114,12 @@ nav{
 
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     height: auto;
     width: 100%;
 }
 
 .profile-picture img{
+    border-radius: 50%;
     width: 50%;
 }
 
