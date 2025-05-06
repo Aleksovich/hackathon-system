@@ -218,12 +218,11 @@
     .user-card {
       display: flex;
       align-items: center;
-      margin: 4%;
+      margin: 2%;
       padding: 2%;
 
       background-color: #E0EBF3;
       border-radius: 5px;
-      margin-bottom: 3%;
     }
     
     .user-avatar {
@@ -474,7 +473,7 @@
       document.getElementById('save-account').addEventListener('click', function() {
         // Validate required fields
         let isValid = true;
-        const requiredFields = ['first-name', 'last-name', 'email'];
+        const requiredFields = ['first-name', 'last-name', 'email', 'sex', 'age', 'contact', 'assigned-position', 'department', 'civil-status', 'address'];
         
         requiredFields.forEach(id => {
           const field = document.getElementById(id);
