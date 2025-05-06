@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/global.css">
+
+  <title>University of Makati - Registration Form</title>
+  <style>
+
+    nav{
+        background-color: var(--clr-Green);
+    }
+    
+    body {
+      background-color: #FCFCFC;
+    }
+    
+    .container {
+      padding-inline: 5%;
+      padding-top: 7%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+
+      width: 100%;
+    }
+
+    .card{
+        padding: 3%;
+    }
+
+    .card, .sidecard {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border-radius: 5px;
+
+        gap: 1rem;
+
+        border: 2px solid var(--clr-Green);
+    }
+
+    .sidecard {
+        border: none;
+    }
+
+    label{
+        color: var(--clr-Green);
+        font-family: var(--ff-Proxima);
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .card-title {
+    color: var(--clr-Green);
+      padding-bottom: 2%;
+      margin-bottom: 2%;
+      border-bottom: 1px solid var(--clr-Green);
+    }
+    
+    .profile-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      gap: 1rem;
+
+    }
+    .profile-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .profile-image img{
+      width: 70%;
+      height: auto;
+  
+      border-radius: 50%;
+    }
+
+    .form-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .completeness-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    
+    .circle-bg {
+      fill: none;
+      stroke: #e9e9e9;
+      stroke-width: 8;
+    }
+    
+    .circle-progress {
+      fill: none;
+      stroke: var(--highlight-color);
+      stroke-width: 8;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 0.5s;
+    }
+    
+    .circle-text {
+      font-size: 16px;
+      font-weight: bold;
+      fill: var(--highlight-color);
+    }
+    
+    .completeness-label {
+      text-align: center;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    
+    .form-group {
+    flex: 1;
+      margin-bottom: 15px;
+    }
+    
+    .form-container{
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
+        width: 33%;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--clr-Green);
+      font-size: 16px;
+
+      flex: 1;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(10, 93, 51, 0.2);
+    }
+    
+    .btn-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      gap: 1.5rem;
+    }
+    
+    .btn {
+      padding: 8px 15px;
+      border: 1px solid var(--clr-Green);
+      background-color: transparent;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+
+      color: var(--clr-Green);
+    font-family: var(--ff-Metropolis);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+    
+    .btn:hover {
+        background-color: var(--clr-White);
+    }
+
+ .registered-usertable {
+    max-height: 200px; /* or whatever height you prefer */
+    overflow-y: auto;
+}
+
+    
+    .sidebar-menu {
+      display: flex;
+      flex-direction: column;
+
+      padding: 5%;
+
+      border-radius: 0.625rem;
+      border: 2px solid var(--clr-Green);
+    }
+    
+    .sidebar-menu a {
+      padding: 10px 15px;
+      color: var(--clr-Green);
+    font-family: var(--ff-Metropolis);
+    font-size: 1rem;
+    font-weight: 400;
+    }
+    
+    .sidebar-menu a:hover {
+        text-decoration: underline;
+    }
+    
+    .registered-users {
+      border-radius: 0.625rem;
+        width: 100%;
+        height: 100%;
+      border: 2px solid var(--clr-Green);
+
+    }
+    
+    .user-card {
+      display: flex;
+      align-items: center;
+      margin: 4%;
+      padding: 2%;
+
+      background-color: #E0EBF3;
+      border-radius: 5px;
+      margin-bottom: 3%;
+    }
+    
+    .user-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #e9e9e9;
+      margin-right: 15px;
+      overflow: hidden;
+    }
+    
+    .user-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .user-info h4,  .user-info p {
+        color: var(--clr-Green);
+    font-family: var(--ff-Proxima);
+    font-size: 1.125rem;
+    font-weight: 600;
+    }
+    
+    .user-info p {
+        font-weight: 400;
+    }
+
+    .circle-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        width: 20%;
+    }
+
+    .form-row{
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        width: 100%;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<header>
+    <nav>
+        <div class="navbar-left">
+            <img src="images/UMakLogo.png" alt="UMak Logo">
+            <a href="#">UNIVERSITY OF MAKATI</a>
+        </div>
+        <ul class="navbar-right">
+            <li><a href="">Home</a></li>
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Registration Form Card -->
+    <div class="card">
+      <h2 class="card-title">New Accounts</h2>
+      
+      <div class="profile-section">
+        <div class="profile-image">
+            <img src="images/profile-placeholder.jfif" alt="Profile Pic">
+        </div>
+
+        <div class="circle-container">
+            <div class="completeness-container">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                  <circle class="circle-bg" cx="40" cy="40" r="36"></circle>
+                  <circle class="circle-progress" cx="40" cy="40" r="36" 
+                         stroke-dasharray="226.19" stroke-dashoffset="226.19"></circle>
+                  <text class="circle-text" x="40" y="45" text-anchor="middle">0%</text>
+                </svg>
+              </div>
+              
+              <div class="completeness-label">Profile Completeness</div>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="assigned-position">Assigned Position:</label>
+                <input type="text" class="form-control" id="assigned-position">
+            </div>
+              
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" class="form-control" id="department">
+            </div>
+        </div>
+
+        
+      </div>
+      
+      <div class="form-grid">
+      
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" class="form-control" id="first-name">
+              </div>
+              
+              <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" class="form-control" id="last-name">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" class="form-control" id="contact">
+              </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <input type="text" class="form-control" id="sex">
+              </div>
+              
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="civil-status">Civil Status:</label>
+                <input type="text" class="form-control" id="civil-status">
+            </div>
+              
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address">
+            </div>
+        </div>
+        
+      </div>
+      
+      <div class="btn-container">
+        <button class="btn btn-primary" id="save-account">Save Account</button>
+        <button class="btn btn-outline" id="delete-account">Delete Account</button>
+        <button class="btn btn-outline" id="new-account">New Account</button>
+      </div>
+    </div>
+    
+    <!-- Sidebar Card -->
+    <div class="sidecard">
+      <div class="sidebar-menu">
+        <a href="#">Personal Information</a>
+        <a href="#">Academic Information</a>
+        <a href="#">Work Experience</a>
+        <a href="#">Awards, Fellowships, and Recognitions</a>
+        <a href="#">Professional Licenses</a>
+        <a href="#">Research and Publications</a>
+        <a href="#">Professional Memberships</a>
+        <a href="#">Seminars and Trainings</a>
+        <a href="#">Account Security</a>
+      </div>
+      
+      <div class="registered-users">
+        <div class="registered-usertable">
+
+            <div class="user-card">
+                <div class="user-avatar">
+                  <img src="/api/placeholder/50/50" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                  <h4>Anna Charisma De Chavez</h4>
+                  <p>Associate Professor</p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form fields
+      const formFields = [
+        'assigned-position', 'department', 'first-name', 'last-name', 
+        'contact', 'sex', 'age', 'email', 'civil-status', 'address'
+      ];
+      
+      // Track form completeness
+      const totalFields = formFields.length;
+      let completedFields = 0;
+      
+      // Progress circle elements
+      const progressCircle = document.querySelector('.circle-progress');
+      const progressText = document.querySelector('.circle-text');
+      const circumference = 2 * Math.PI * 36; // 2πr where r=36
+      
+      // Update progress function
+      function updateProgress() {
+        completedFields = formFields.filter(id => 
+          document.getElementById(id).value.trim() !== ''
+        ).length;
+        
+        const percentage = Math.round((completedFields / totalFields) * 100);
+        const offset = circumference - (percentage / 100 * circumference);
+        
+        progressCircle.style.strokeDasharray = circumference;
+        progressCircle.style.strokeDashoffset = offset;
+        progressText.textContent = `${percentage}%`;
+        
+        // Change color based on completion
+        if (percentage < 30) {
+          progressCircle.style.stroke = '#dc3545'; // Red
+        } else if (percentage < 70) {
+          progressCircle.style.stroke = '#ffc107'; // Yellow
+        } else {
+          progressCircle.style.stroke = '#28a745'; // Green
+        }
+      }
+      
+      // Add input event listeners to all form fields
+      formFields.forEach(id => {
+        const field = document.getElementById(id);
+        field.addEventListener('input', updateProgress);
+      });
+      
+      // Button functionality
+      document.getElementById('save-account').addEventListener('click', function() {
+        // Validate required fields
+        let isValid = true;
+        const requiredFields = ['first-name', 'last-name', 'email'];
+        
+        requiredFields.forEach(id => {
+          const field = document.getElementById(id);
+          if (field.value.trim() === '') {
+            field.style.borderColor = '#dc3545';
+            isValid = false;
+          } else {
+            field.style.borderColor = '#ced4da';
+          }
+        });
+        
+        if (isValid) {
+          alert('Account saved successfully!');
+          updateUsersList();
+        } else {
+          alert('Please fill in all required fields.');
+        }
+      });
+      
+      document.getElementById('delete-account').addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete this account?')) {
+          // Clear all form fields
+          formFields.forEach(id => {
+            document.getElementById(id).value = '';
+          });
+          updateProgress();
+          alert('Account deleted successfully!');
+        }
+      });
+      
+      document.getElementById('new-account').addEventListener('click', function() {
+        // Clear all form fields
+        formFields.forEach(id => {
+          document.getElementById(id).value = '';
+          document.getElementById(id).style.borderColor = '#ced4da';
+        });
+        updateProgress();
+      });
+      
+      // Function to add a new user to the list
+      function updateUsersList() {
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const position = document.getElementById('assigned-position').value || 'Pending Position';
+        
+        if (firstName && lastName) {
+          const fullName = `${firstName} ${lastName}`;
+          
+          const userCard = document.createElement('div');
+          userCard.className = 'user-card';
+          userCard.innerHTML = `
+            <div class="user-avatar">
+              <img src="/api/placeholder/50/50" alt="User Avatar">
+            </div>
+            <div class="user-info">
+              <h4>${fullName}</h4>
+              <p>${position}</p>
+            </div>
+          `;
+          
+          const registeredUsers = document.querySelector('.registered-users');
+          registeredUsers.prepend(userCard);
+        }
+      }
+      
+      // Initialize progress bar
+      updateProgress();
+    });
+  </script>
+</body>
+</html>
