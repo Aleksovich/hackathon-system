@@ -12,19 +12,37 @@
 
     nav{
         background-color: var(--clr-Green);
+        top: 0;
+        z-index: 1000;
     }
     
     body {
       background-color: #FCFCFC;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section2, .section3, .section4, .section5 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      padding: 20px 0;
     }
     
     .container {
       padding-inline: 5%;
       padding-top: 7%;
+      width: 100%;
+      position: relative;
+    }
+
+    .content-wrapper {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 20px;
-
       width: 100%;
     }
 
@@ -35,18 +53,24 @@
     .card, .sidecard {
         display: flex;
         flex-direction: column;
-        height: 100%;
-        width: 100%;
         background-color: transparent;
         border-radius: 5px;
-
         gap: 1rem;
-
-        border: 2px solid var(--clr-Green);
     }
 
-    .sidecard {
-        border: none;
+    .card {
+        border: 2px solid var(--clr-Green);
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Fixed sidebar styling */
+    .sidebar-container {
+      position: fixed;
+      top: 100px; /* Adjust based on your navbar height */
+      right: 5%;
+      width: calc(25% - 20px); /* Adjust width to match layout */
+      z-index: 900;
     }
 
     label{
@@ -231,10 +255,10 @@
     
     .registered-users {
       border-radius: 0.625rem;
-        width: 100%;
-        height: 100%;
+      width: 100%;
+      height: 350px; /* Increased fixed height */
       border: 2px solid var(--clr-Green);
-
+      margin-top: 20px;
     }
     
     .user-card {
@@ -292,10 +316,28 @@
     .firstlayer{
       flex: 1;
     }
+
+    /* Added for sticky behavior */
+    main {
+      min-height: 100vh;
+      position: relative;
+    }
     
     @media (max-width: 768px) {
-      .container {
+      .content-wrapper {
         grid-template-columns: 1fr;
+      }
+      
+      .sidebar-container {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        right: 0;
+      }
+      
+      .container {
+        padding-top: 20px;
       }
     }
   </style>
@@ -317,132 +359,286 @@
 </header>
 <body>
   <!-- Main Content -->
-  <div class="container">
-    <!-- Registration Form Card -->
-    <div class="card">
-      <h2 class="card-title">Personal Information</h2>
-      
-      <div class="profile-section">
-        <div class="profile-image">
-            <img src="images/roel-profile.png" alt="Profile Pic">
+  <main>
+    <!-- Fixed sidebar that stays visible throughout all sections -->
+    <div class="sidebar-container">
+      <div class="sidecard">
+        <div class="sidebar-menu">
+          <a href="#">Create New Account</a>
+          <a id="active-sidebar" href="#">Professional Information</a>
+          <a href="#">Professional Licenses</a>
+          <a href="#">Research and Publications</a>
+          <a href="#">Account Security</a>
         </div>
-
-        <div class="circle-container">
-            <div class="completeness-container">
-                <svg width="80" height="80" viewBox="0 0 80 80">
-                  <circle class="circle-bg" cx="40" cy="40" r="36"></circle>
-                  <circle class="circle-progress" cx="40" cy="40" r="36" 
-                         stroke-dasharray="226.19" stroke-dashoffset="226.19"></circle>
-                  <text class="circle-text" x="40" y="45" text-anchor="middle">0%</text>
-                </svg>
-              </div>
-              
-              <div class="completeness-label">Profile Completeness</div>
-        </div>
-
-        <div class="form-container">
-            <div class="form-group">
-                <label for="assigned-position">Assigned Position:</label>
-                <input type="text" class="form-control" id="assigned-position" value="Associate Professor" readonly>
-            </div>
-              
-            <div class="form-group">
-                <label for="department">Department:</label>
-                <input type="text" class="form-control" id="department" value="IT Department" readonly>
-            </div>
-        </div>
-
         
+        <div class="registered-users">
+          <div class="registered-usertable">
+              <div class="user-card">
+                  <div class="user-avatar">
+                    <img src="/api/placeholder/50/50" alt="User Avatar">
+                  </div>
+                  <div class="user-info">
+                    <h4>Anna Charisma De Chavez</h4>
+                    <p>Associate Professor</p>
+                  </div>
+              </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="form-grid">
-      
-        <div class="form-row">
-            <div class="form-group firstlayer">
-                <label for="first-name">First Name:</label>
-                <input type="text" class="form-control" id="first-name" value="Roel" readonly>
+    </div>
+
+    <div class="container">
+      <div class="content-wrapper">
+        <!-- Registration Form Card -->
+        <div class="card">
+          <h2 class="card-title">Personal Information</h2>
+          
+          <div class="profile-section">
+            <div class="profile-image">
+                <img src="images/roel-profile.png" alt="Profile Pic">
+            </div>
+
+            <div class="circle-container">
+                <div class="completeness-container">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                      <circle class="circle-bg" cx="40" cy="40" r="36"></circle>
+                      <circle class="circle-progress" cx="40" cy="40" r="36" 
+                            stroke-dasharray="226.19" stroke-dashoffset="226.19"></circle>
+                      <text class="circle-text" x="40" y="45" text-anchor="middle">0%</text>
+                    </svg>
+                  </div>
+                  
+                  <div class="completeness-label">Profile Completeness</div>
+            </div>
+
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="assigned-position">Assigned Position:</label>
+                    <input type="text" class="form-control" id="assigned-position" value="Associate Professor" readonly>
+                </div>
+                  
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input type="text" class="form-control" id="department" value="IT Department" readonly>
+                </div>
+            </div>
+          </div>
+          
+          <div class="form-grid">
+            <div class="form-row">
+                <div class="form-group firstlayer">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" class="form-control" id="first-name" value="Roel" readonly>
+                  </div>
+                  
+                  <div class="form-group firstlayer">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" class="form-control" id="last-name" value="Traballo" readonly>
+                  </div>
+                  
+                  <div class="form-group firstlayer">
+                    <label for="contact">Contact:</label>
+                    <input type="text" class="form-control" id="contact" value="09123456789" readonly>
+                  </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group secondlayer">
+                    <label for="sex">Sex:</label>
+                    <input type="text" class="form-control" id="sex" value="Male" readonly>
+                  </div>
+                  
+                  <div class="form-group secondlayer">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" value="18" readonly>
+                  </div>
+                  
+                  <div class="form-group secondlayer">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" value="rtraballo.k121512345@umak.edu.ph" readonly>
+                  </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group thirdlayer">
+                    <label for="civil-status">Civil Status:</label>
+                    <input type="text" class="form-control" id="civil-status" value="Married" readonly>
+                </div>
+                  
+                <div class="form-group thirdlayer">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" id="address" value="Blk. 123 Lot 45 Agoncillo Street East Rembo" readonly>
+                </div>
+            </div>
+          </div>
+          
+          <div class="btn-container">
+            <button class="btn btn-outline" id="edit-personal-info">Edit Personal Info </button>
+          </div>
+        </div>
+        
+        <!-- Empty div to maintain grid layout -->
+        <div style="width: 100%;"></div>
+      </div>
+    </div>
+  </main>
+
+  <section class="section2" id="section2">
+    <!-- Content for section 2 -->
+    <div class="container" style="padding-top: 40px;">
+      <div class="content-wrapper">
+        <div style="grid-column: 1;">
+          <h2 style="color: var(--clr-Green);">Professional Information</h2>
+          <div style="background-color: #f0f0f0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
+            <div class="form-row">
+              <div class="form-group firstlayer">
+                <label for="education">Educational Background:</label>
+                <input type="text" class="form-control" id="education" value="Master's in Computer Science">
               </div>
               
               <div class="form-group firstlayer">
-                <label for="last-name">Last Name:</label>
-                <input type="text" class="form-control" id="last-name" value="Traballo" readonly>
+                <label for="specialization">Specialization:</label>
+                <input type="text" class="form-control" id="specialization" value="Web Development">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="experience">Years of Experience:</label>
+                <input type="number" class="form-control" id="experience" value="8">
+              </div>
+              
+              <div class="form-group">
+                <label for="work-history">Work History:</label>
+                <input type="text" class="form-control" id="work-history" value="10 years at University of Makati">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Empty div to maintain grid layout -->
+        <div style="width: 100%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section3" id="section3">
+    <!-- Content for section 3 -->
+    <div class="container" style="padding-top: 40px;">
+      <div class="content-wrapper">
+        <div style="grid-column: 1;">
+          <h2 style="color: var(--clr-Green);">Professional Licenses</h2>
+          <div style="background-color: #e0e0e0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
+            <div class="form-row">
+              <div class="form-group firstlayer">
+                <label for="license-type">License Type:</label>
+                <input type="text" class="form-control" id="license-type" value="Professional Teacher's License">
               </div>
               
               <div class="form-group firstlayer">
-                <label for="contact">Contact:</label>
-                <input type="text" class="form-control" id="contact" value="09123456789" readonly>
+                <label for="license-number">License Number:</label>
+                <input type="text" class="form-control" id="license-number" value="PTL-123456789">
               </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group secondlayer">
-                <label for="sex">Sex:</label>
-                <input type="text" class="form-control" id="sex" value="Male" readonly>
-              </div>
-              
-              <div class="form-group secondlayer">
-                <label for="age">Age:</label>
-                <input type="number" class="form-control" id="age" value="18" readonly>
-              </div>
-              
-              <div class="form-group secondlayer">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" value="rtraballo.k121512345@umak.edu.ph" readonly>
-              </div>
-        </div>
-        
-        <div class="form-row">
-            <div class="form-group thirdlayer">
-                <label for="civil-status">Civil Status:</label>
-                <input type="text" class="form-control" id="civil-status" value="Married" readonly>
             </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date-issued">Date Issued:</label>
+                <input type="text" class="form-control" id="date-issued" value="January 15, 2015">
+              </div>
               
-            <div class="form-group thirdlayer">
-                <label for="address">Address:</label>
-                <input type="text" class="form-control" id="address" value="Blk. 123 Lot 45 Agoncillo Street East Rembo" readonly>
+              <div class="form-group">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" class="form-control" id="expiry-date" value="January 15, 2025">
+              </div>
             </div>
+          </div>
         </div>
-        
-      </div>
-      
-      <div class="btn-container">
-        <button class="btn btn-primary" id="save-account">Save Account</button>
-        <button class="btn btn-outline" id="delete-account">Delete Account</button>
-        <button class="btn btn-outline" id="new-account">New Account</button>
+        <!-- Empty div to maintain grid layout -->
+        <div style="width: 100%;"></div>
       </div>
     </div>
-    
-    <!-- Sidebar Card -->
-    <div class="sidecard">
-      <div class="sidebar-menu">
-        <a href="#">Create New Account</a>
-        <a id="active-sidebar" href="#">Professional Information</a>
-        <a href="#">Professional Licenses</a>
-        <a href="#">Research and Publications</a>
-        <a href="#">Account Security</a>
-      </div>
-      
-      <div class="registered-users">
-        <div class="registered-usertable">
+  </section>
 
-            <div class="user-card">
-                <div class="user-avatar">
-                  <img src="/api/placeholder/50/50" alt="User Avatar">
-                </div>
-                <div class="user-info">
-                  <h4>Anna Charisma De Chavez</h4>
-                  <p>Associate Professor</p>
-                </div>
+  <section class="section4" id="section4">
+    <!-- Content for section 4 -->
+    <div class="container" style="padding-top: 40px;">
+      <div class="content-wrapper">
+        <div style="grid-column: 1;">
+          <h2 style="color: var(--clr-Green);">Research and Publications</h2>
+          <div style="background-color: #d0d0d0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
+            <div class="form-row">
+              <div class="form-group firstlayer">
+                <label for="research-title">Research Title:</label>
+                <input type="text" class="form-control" id="research-title" value="Impact of AI in Education">
+              </div>
+              
+              <div class="form-group firstlayer">
+                <label for="pub-date">Publication Date:</label>
+                <input type="text" class="form-control" id="pub-date" value="March 2023">
+              </div>
             </div>
-
-
-
-
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="journal">Journal:</label>
+                <input type="text" class="form-control" id="journal" value="Journal of Educational Technology">
+              </div>
+              
+              <div class="form-group">
+                <label for="co-authors">Co-Authors:</label>
+                <input type="text" class="form-control" id="co-authors" value="Dr. Anna De Chavez, Dr. John Smith">
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- Empty div to maintain grid layout -->
+        <div style="width: 100%;"></div>
       </div>
-
     </div>
-  </div>
+  </section>
+
+  <section class="section5" id="section5">
+    <!-- Content for section 5 -->
+    <div class="container" style="padding-top: 40px; padding-bottom: 100px;">
+      <div class="content-wrapper">
+        <div style="grid-column: 1;">
+          <h2 style="color: var(--clr-Green);">Account Security</h2>
+          <div style="background-color: #c0c0c0; padding: 20px; border: 2px solid var(--clr-Green); border-radius: 5px;">
+            <div class="form-row">
+              <div class="form-group firstlayer">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" value="rtraballo">
+              </div>
+              
+              <div class="form-group firstlayer">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" value="********">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="security-question">Security Question:</label>
+                <input type="text" class="form-control" id="security-question" value="What was your first pet's name?">
+              </div>
+              
+              <div class="form-group">
+                <label for="recovery-email">Recovery Email:</label>
+                <input type="email" class="form-control" id="recovery-email" value="roel.traballo@gmail.com">
+              </div>
+            </div>
+            
+            <div class="btn-container" style="margin-top: 20px;">
+              <button class="btn btn-outline">Change Password</button>
+              <button class="btn btn-outline">Update Security Info</button>
+            </div>
+          </div>
+        </div>
+        <!-- Empty div to maintain grid layout -->
+        <div style="width: 100%;"></div>
+      </div>
+    </div>
+  </section>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -491,48 +687,71 @@
       });
       
       // Button functionality
-      document.getElementById('save-account').addEventListener('click', function() {
-        // Validate required fields
-        let isValid = true;
-        const requiredFields = ['first-name', 'last-name', 'email', 'sex', 'age', 'contact', 'assigned-position', 'department', 'civil-status', 'address'];
-        
-        requiredFields.forEach(id => {
-          const field = document.getElementById(id);
-          if (field.value.trim() === '') {
-            field.style.borderColor = '#dc3545';
-            isValid = false;
+      const saveButton = document.getElementById('save-account');
+      if (saveButton) {
+        saveButton.addEventListener('click', function() {
+          // Validate required fields
+          let isValid = true;
+          const requiredFields = ['first-name', 'last-name', 'email', 'sex', 'age', 'contact', 'assigned-position', 'department', 'civil-status', 'address'];
+          
+          requiredFields.forEach(id => {
+            const field = document.getElementById(id);
+            if (field.value.trim() === '') {
+              field.style.borderColor = '#dc3545';
+              isValid = false;
+            } else {
+              field.style.borderColor = '#ced4da';
+            }
+          });
+          
+          if (isValid) {
+            alert('Account saved successfully!');
+            updateUsersList();
           } else {
-            field.style.borderColor = '#ced4da';
+            alert('Please fill in all required fields.');
           }
         });
-        
-        if (isValid) {
-          alert('Account saved successfully!');
-          updateUsersList();
-        } else {
-          alert('Please fill in all required fields.');
-        }
-      });
+      }
       
-      document.getElementById('delete-account').addEventListener('click', function() {
-        if (confirm('Are you sure you want to delete this account?')) {
+      const deleteButton = document.getElementById('delete-account');
+      if (deleteButton) {
+        deleteButton.addEventListener('click', function() {
+          if (confirm('Are you sure you want to delete this account?')) {
+            // Clear all form fields
+            formFields.forEach(id => {
+              document.getElementById(id).value = '';
+            });
+            updateProgress();
+            alert('Account deleted successfully!');
+          }
+        });
+      }
+      
+      const newAccountButton = document.getElementById('new-account');
+      if (newAccountButton) {
+        newAccountButton.addEventListener('click', function() {
           // Clear all form fields
           formFields.forEach(id => {
             document.getElementById(id).value = '';
+            document.getElementById(id).style.borderColor = '#ced4da';
           });
           updateProgress();
-          alert('Account deleted successfully!');
-        }
-      });
-      
-      document.getElementById('new-account').addEventListener('click', function() {
-        // Clear all form fields
-        formFields.forEach(id => {
-          document.getElementById(id).value = '';
-          document.getElementById(id).style.borderColor = '#ced4da';
         });
-        updateProgress();
-      });
+      }
+      
+      const editPersonalInfoButton = document.getElementById('edit-personal-info');
+      if (editPersonalInfoButton) {
+        editPersonalInfoButton.addEventListener('click', function() {
+          // Remove readonly attribute to make fields editable
+          formFields.forEach(id => {
+            const field = document.getElementById(id);
+            if (field) {
+              field.removeAttribute('readonly');
+            }
+          });
+          alert('You can now edit your personal information.');
+        });
+      }
       
       // Function to add a new user to the list
       function updateUsersList() {
@@ -555,7 +774,7 @@
             </div>
           `;
           
-          const registeredUsers = document.querySelector('.registered-users');
+          const registeredUsers = document.querySelector('.registered-usertable');
           registeredUsers.prepend(userCard);
         }
       }
